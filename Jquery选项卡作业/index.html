@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            border: 5px solid #000;
+        }
+
+        .wrapper ul {
+            text-align: center;
+        }
+
+        .wrapper ul li {
+            cursor: pointer;
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #000;
+            background-color: #ccc;
+            line-height: 60px;
+            text-align: center;
+            list-style: none;
+        }
+
+        .wrapper ul .active {
+            background-color: red;
+        }
+
+        .dis {
+            width: 100%;
+            height: 338px;
+            line-height: 338px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            background-color: orange;
+            text-align: center;
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div class="dis show">11</div>
+        <div class="dis">22</div>
+        <div class="dis">33</div>
+    </div>
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script>
+        $('ul').click(function (e) {
+            var target = e.target;
+            if (target.nodeName == 'LI') {
+                $('.active').removeClass('active');
+                $(target).addClass('active');
+                var index = $(target).index();
+                $('.dis').removeClass('show');
+                $($('.dis')[index]).addClass('show');
+            }
+        })
+    </script>
+</body>
+
+</html>

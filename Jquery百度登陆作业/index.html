@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Baidu登陆</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper {
+            width: 393px;
+            margin: 100px auto;
+            background-color: #fff;
+        }
+        .wrapper .login-header {
+            position: relative;
+            cursor: move;
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            border-width: 1px 1px 0;
+            border-bottom: 0;
+        }
+        .login-header span {
+            display: block;
+            height: 18px;
+            padding: 15px 0 13px;
+            margin-right: 29px;
+            font-size: 16px;
+            font-family: "宋体";
+            font-weight: 700;
+            color: #666;
+            background: url(./baidu_logo_24.png) 18px 8px no-repeat;
+            text-indent: 50px;
+        }
+        .login-header .closeBtn {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: 20px;
+            top: 16px;
+        }
+        .closeBtn a {
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            background-image: url(./pass_login_icons.png);
+            background-repeat: no-repeat;
+            background-position: -56px -48px;
+        }
+        .closeBtn a:hover {
+            background-position: -72px -48px;
+        }
+        .login-body {
+            padding: 0 20px;
+        }
+        .login-body p {
+            text-align: right;
+            margin: 9px 0 10px;
+        }
+        .login-body .nameWrap,.login-body .passWrap {
+            position: relative;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+        .login-body .nameWrap label,.login-body .passWrap label {
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 24px;
+            top: 8px;
+            left: 6px;
+            padding: 0 0 0 24px;
+            background-image: url(./input_icons_24.png);
+        }
+        .login-body .nameWrap label {
+            background-position: 0 -68px;
+        }
+        .login-body .passWrap label {
+            background-position: 0 -147px;
+        }
+        .login-body .nameWrap input,.login-body .passWrap input {
+            width: 260px;
+            padding: 12px 50px 12px 38px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="login-header">
+            <span>登陆百度账号</span>
+            <div class="closeBtn">
+                <a href="javascript: void(0);"></a>
+            </div>
+        </div>
+        <div class="login-body">
+            <p><a href="javascript: void(0);">短信快捷登陆</a></p>
+            <div class="nameWrap">
+                <label for="userName"></label>
+                <input type="text" id="userName" placeholder="手机/邮箱/用户名">
+            </div>
+            <div class="passWrap">
+                <label for="passWord"></label>
+                <input type="password" id="passWord" placeholder="密码">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+    <script src="./jquery-3.2.1.min.js"></script>
+</body>
+
+</html>

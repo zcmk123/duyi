@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery轮播图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            margin: 50px auto;
+            width: 800px;
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            height: 100%;
+        }
+        .slide ul li {
+            float: left;
+            list-style: none;
+        }
+        .slide ul li img {
+            width: 800px;
+            height: 100%;
+        }
+        .control-ul {
+            position: absolute;
+            margin-bottom: 10px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .control-ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .control-ul li {
+            cursor: pointer;
+            float: left;
+            list-style: none;
+            border: 8px solid #666;
+            border-radius: 50%;
+            opacity: 0.6;
+            margin-right: 5px;
+        }
+        .control-ul .active {
+            opacity: 1;
+            border-color: white;
+            transition: all 0.4s;
+        }
+        .r-btn, .l-btn {
+            cursor: pointer;
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            margin-top: -40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 40px;
+            background-color: rgba(85, 85, 85, 0.5);
+            color: white;
+            opacity: 0.5;
+        }
+        .r-btn:hover, .l-btn:hover {
+            background-color: rgb(148, 145, 145);
+        }
+        .l-btn {
+            left: 0;
+        }
+        .r-btn {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="slide" style="left: 0;">
+            <ul class="slide-inside">
+                <li><img src="img/1.jpg" alt="1"></li>
+                <li><img src="img/2.jpg" alt="2"></li>
+                <li><img src="img/3.jpg" alt="3"></li>
+                <li><img src="img/4.jpg" alt="4"></li>
+                <li><img src="img/5.jpg" alt="5"></li>
+                <li><img src="img/6.jpg" alt="6"></li>
+                <li><img src="img/7.jpg" alt="7"></li>
+                <li><img src="img/8.jpg" alt="8"></li>
+            </ul>
+        </div>
+        <ul class="control-ul">
+        </ul>
+        <span class="l-btn">&lt;</span>
+        <span class="r-btn">&gt;</span>
+        <script src="./jquery-3.2.1.min.js"></script>
+        <script>
+            var imgLen = $('.slide-inside li').length;
+            var boxWidth = parseInt($('.box').css('width'));
+            var slideWidth = imgLen * boxWidth;
+            var Gindex = 0;
+            var timer = null;
+            function iniSlide() {
+                $('.slide').css({ width: slideWidth + 'px' });
+            }
+            function iniUlcontrol(imgLen) {
+                var tempStr = '<li class=\'active\'></li>';
+                while (imgLen > 1) {
+                    tempStr += '<li></li>';
+                    imgLen--;
+                }
+                $('.control-ul').html(tempStr);
+            }
+            function setTimeOut() {
+                timer = setTimeout(autoSlide, 2000);
+            }
+            function autoSlide() {
+                clearTimeout(timer);
+                var left = Math.abs($('.slide').position().left);
+                var offSetLeft = left + boxWidth;
+                Gindex++;
+                if (Gindex >= imgLen) {
+                    move(2);
+                    Gindex = 0;
+                } else {
+                    move(1, offSetLeft);
+                }
+                changeControlUi(Gindex);
+            }
+            function move(direction, target) {
+                $('.slide').stop();
+                switch (direction) {
+                    case 1:
+                        $('.slide').animate({ left: '-' + target + 'px' }, 1000, setTimeOut);
+                        break;
+                    case 2://回头
+                        $('.slide').animate({ left: 0 }, 2000, setTimeOut);
+                }
+            }
+            function clickControl(index) {
+                Gindex = index;
+                clearTimeout(timer);
+                move(1, index * boxWidth);
+                changeControlUi(Gindex);
+            }
+            function changeControlUi(index) {
+                $('.control-ul li').removeClass('active');
+                $('.control-ul li').eq(index).addClass('active');
+            }
+            $('.control-ul').on('click', function (e) {
+                var index = $(e.target).index();
+                clickControl(index);
+            });
+            $('.l-btn').on('click', function () {
+                if(Gindex > 0) {
+                    clearTimeout(timer);
+                    move(1, --Gindex * boxWidth);
+                    changeControlUi(Gindex);
+                }
+            });
+            $('.r-btn').on('click', function () {
+                if(Gindex < imgLen-1){
+                    clearTimeout(timer);
+                    move(1, ++Gindex * boxWidth);
+                    changeControlUi(Gindex);
+                }
+            });
+            function init() {
+                iniSlide();
+                iniUlcontrol(imgLen);
+                setTimeOut();
+            }
+            init();
+        </script>
+</body>
+</html>
