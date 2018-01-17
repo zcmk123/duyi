@@ -8,7 +8,7 @@
     }
 
     $('#input-text').keyup(function () {
-        deBounce(getDataList, 1000);
+        deBounce(getDataList, 500);
     });
 
     function getDataList() {
