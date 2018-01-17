@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.nav-head {
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+    color: #d5d5d5;
+    background-color: #545652;
+}
+.nav-left {
+    float: left;
+}
+.nav-right {
+    float: right;
+}
+.nav-left li, .nav-right li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 12px;
+}
+.nav-left li:hover, .nav-right li:hover {
+    color: #FFF;
+}
+.nav-top-wrap {
+    width: 100%;
+    border-color: #e3ebec;
+    border-bottom: 1px solid #e5ebe4;
+    background-color: #f0f3f5;
+    font-size: 13px;
+}
+.nav-top {
+    width: 1040px;
+    margin: 0 auto;
+}
+.nav-logo {
+    float: left;
+    height: 56px;
+    width: 145px;
+    margin: 0 13px 0 0;
+    background: url(//img3.doubanio.com/dae/accounts/resources/094108a/movie/assets/lg_movie_a12_2.png) no-repeat 0 12px;
+}
