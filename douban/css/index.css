@@ -34,11 +34,17 @@
 .nav-top {
     width: 1040px;
     margin: 0 auto;
+    padding: 10px 0 5px;
 }
 .nav-logo {
     float: left;
     height: 56px;
     width: 145px;
     margin: 0 13px 0 0;
-    background: url(//img3.doubanio.com/dae/accounts/resources/094108a/movie/assets/lg_movie_a12_2.png) no-repeat 0 12px;
+    background: url(https://img3.doubanio.com/dae/accounts/resources/094108a/movie/assets/lg_movie_a12_2.png) no-repeat 0 12px;
+}
+.nav-top::after {
+    content: "";
+    display: block;
+    clear: both;
 }
