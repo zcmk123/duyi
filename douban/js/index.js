@@ -13,6 +13,7 @@
 
     function getDataList() {
         $.ajax({
+            type: 'GET',
             url: 'https://api.douban.com/v2/movie/search?q=' + $('#input-text').val() + '&count=7',
             dataType: 'jsonp',
             success: renderList,
