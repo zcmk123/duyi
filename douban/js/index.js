@@ -30,7 +30,7 @@
                 data = data.subjects;
                 data.forEach(function (ele, index) {
                     var $Li = $("<li></li>"),
-                        $A = $("<a href='" + ele.alt + "'></a>"),
+                        $A = $("<a href='./itemPage.html?id=" + ele.id + "'></a>"),
                         $Img = $("<img src=" + ele.images.small + ">"),
                         $P1 = $("<p>" + ele.title + "</p>");
                     sgUl.append($Li.append($A.append($Img, $P1)));
