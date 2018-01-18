@@ -15,10 +15,12 @@
         })
         function renderPage (data) {
             console.log(data);
-            var movContent = $(".mov-content");
-            $Content = $("<div class='content'></div>")
-            $Title = $("<h1>"+ data.title + "    " + "评分:" + data.rating.average +"</h1>")
-            $Summary = $("<p>"+ data.summary +"</p>")
+            var movContent = $(".mov-content"),
+            dataRating = data.rating.average == 0 ? '(暂无评分)' : data.rating.average;
+
+            $Content = $("<div class='content'></div>");
+            $Title = $("<h1>"+ data.title + "    " + "评分:" + dataRating +"</h1>");
+            $Summary = $("<p>"+ data.summary +"</p>");
             $Img = $("<img src="+ data.images.medium +"></img>");
                    
             movContent.append($Img, $Content.append($Title, $Summary));

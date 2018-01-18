@@ -11,9 +11,10 @@
 .mov-content .content {
     display: inline-block;
     width: 750px;
+    vertical-align: top;
 }
 .mov-content img {
-    float: left;
+    display: inline-block;
 }
 .mov-content p, .mov-content h1 {
     padding-left: 30px;
