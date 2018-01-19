@@ -1,0 +1,27 @@
+
+
+.footer-wrap {
+    width: 100%;
+}
+.footer-wrap .changePage {
+    width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+}
+.changePage a {
+    width: 20px;
+    height: 28px;
+    padding: 0px 4px;
+    margin: 2px;
+    text-decoration: none;
+}
+.changePage .active {
+    color: #FFF;
+    background: #83BF73;
+    cursor: normal;
+    pointer-events: none;
+}
+.changePage .non-active:hover{
+    color: #FFF;
+    background: #37a;
+}

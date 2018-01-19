@@ -58,7 +58,7 @@
         $('.sub-btn').on('click', function (e) {
             e.preventDefault();
             //console.log(e);
-            window.location.href = '../listPage.html?q=' + $('#input-text').val() + '&page=1';
+            window.location.href = 'listPage.html?q=' + $('#input-text').val() + '&page=1';
         })
     }
 })()
