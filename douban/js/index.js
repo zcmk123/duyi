@@ -2,14 +2,27 @@
     var searchSug = $('.search-suggest'),
         timer = null;
 
-    function deBounce(func, delay) {
-        clearTimeout(timer);
-        timer = setTimeout(func, delay);
+    // function deBounce(func, delay) {
+    //     clearTimeout(timer);
+    //     timer = setTimeout(func, delay);
+    // }
+    
+    function deBounce (func, delay) {
+        var timer = null;
+        return function () {
+            //console.log(delay);
+            var _this = this;
+            clearTimeout(timer);
+            timer = setTimeout(func.bind(_this), delay);           
+        }
     }
 
-    $('#input-text').keyup(function () {
-        deBounce(getDataList, 500);
-    });
+    $('#input-text').keyup(deBounce(getDataList, 500));
+       
+        // deBounce1(function() {
+        //     console.log(this);
+        // }, 1000)
+    
 
     function getDataList() {
         $.ajax({
