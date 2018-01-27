@@ -1,6 +1,6 @@
 (function () {
-    var url = window.location.search,
-    id = url.split('=')[1];
+    var url = window.location.search;
+    id = url.slice(1).split('=')[1];
     console.log(id);
 
     function getDataList() {
