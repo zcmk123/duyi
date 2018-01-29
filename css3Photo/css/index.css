@@ -48,6 +48,10 @@ html, body {
     border-radius: 20px;
     background-size: cover;
     background-position: center;
+    opacity: 0.7;
+}
+.slice:hover .bg {
+    opacity: 1;
 }
 .click .slice:not([class='active']) {
     width: 0;
@@ -99,6 +103,9 @@ html, body {
 .slice:hover .title{
     transition: font-size 0.1s linear;
     font-size: 30px;
+}
+.click .slice .bg {
+    opacity: 1;
 }
 .click .slice .content {
     opacity: 1;
