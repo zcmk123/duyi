@@ -16,7 +16,7 @@
             timer = setTimeout(func.bind(_this), delay);           
         }
     }
-
+    
     $('#input-text').keyup(deBounce(getDataList, 500));
        
         // deBounce1(function() {

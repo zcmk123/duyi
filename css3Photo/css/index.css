@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #fff;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+.box {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.box ul {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.box ul li {
+    position: relative;
+    float: left;
+    width: 16%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: width 0.3s linear, height 0.2s linear 0.3s;
+    background-color: #555;
+    cursor: pointer;
+}
+.init .bg {
+    transform: translate3d(0, 100%, 0)
+}
+.slice .bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+}
+.click .slice:not([class='active']) {
+    width: 0;
+    height: 0;
+    transition: height 0.3s linear, width 0.2s linear 0.3s;
+}
+.click .slice.active {
+    width: 100%;
+    height: 100%;
+    transition: width 0.5s linear 0.2s;
+    cursor: default;
+}
+.slice:nth-of-type(1) .bg {
+    background-image: url('../img/1.jpg');
+    transition: transform 0.3s linear;
+}
+.slice:nth-of-type(2) .bg {
+    background-image: url('../img/2.jpg');
+    transition: transform 0.3s linear 0.1s;
+}
+.slice:nth-of-type(3) .bg {
+    background-image: url('../img/3.jpg');
+    transition: transform 0.3s linear 0.2s;
+}
+.slice:nth-of-type(4) .bg {
+    background-image: url('../img/4.jpg');
+    transition: transform 0.3s linear 0.3s;
+}
+.slice:nth-of-type(5) .bg {
+    background-image: url('../img/5.jpg');
+    transition: transform 0.3s linear 0.4s;
+}
+.slice:nth-of-type(6) .bg {
+    background-image: url('../img/6.jpg');
+    transition: transform 0.3s linear 0.5s;
+}
+.click .slice .title, .init .slice .title {
+    opacity: 0;
+}
+.wrapper .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s linear 0.5s, font-size 0.1s linear;
+    opacity: 1;
+    font-size: 20px;
+}
+.slice:hover .title{
+    transition: font-size 0.1s linear;
+    font-size: 30px;
+}
+.click .slice .content {
+    opacity: 1;
+    transition: opacity 0.3s linear 0.5s;
+}
+.slice .content {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    margin-top: 30px;
+    line-height: 30px;
+    opacity: 0;
+}
+.slice .content span {
+    position: absolute;
+    left: 30px;
+}
+.slice .content .close {
+    position: absolute;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.slice .content .close::before, .slice .content .close::after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    top:15px;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+}
+.slice .content .close::before {
+    transform: rotate(45deg);
+}
+.slice .content .close::after {
+    transform: rotate(-45deg);
+}
