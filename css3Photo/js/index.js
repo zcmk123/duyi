@@ -1,7 +1,6 @@
 setTimeout(function () {
     $('.wrapper').removeClass('init');
 }, 100)
-
 $('.slice').on('click', function (e) {
     e.stopPropagation();
     $('.wrapper').addClass('click');
