@@ -14,6 +14,7 @@
 }
 .list-data ul li a {
     text-decoration: none;
+    color: #6e6e6e;
 }
 .list-data ul li a img {
     float: left;

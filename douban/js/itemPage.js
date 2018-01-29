@@ -1,5 +1,5 @@
 (function () {
-    var url = window.location.search;
+    var url = window.location.search,
     id = url.slice(1).split('=')[1];
     console.log(id);
 
