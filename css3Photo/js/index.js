@@ -1,4 +1,4 @@
-
+console.log(888);
 window.onload = function () {
     setTimeout(function () {
         $('.wrapper').removeClass('init');
