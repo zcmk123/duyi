@@ -12,4 +12,3 @@ $('.close').on('click', function (e) {
     $('.wrapper').removeClass('click');
     $('.slice').removeClass('active');
 })
-
