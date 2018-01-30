@@ -1,5 +1,5 @@
 
-window.onload(function () {
+window.onload = function () {
     setTimeout(function () {
         $('.wrapper').removeClass('init');
     }, 100)
@@ -13,4 +13,4 @@ window.onload(function () {
         $('.wrapper').removeClass('click');
         $('.slice').removeClass('active');
     })
-})
+}
