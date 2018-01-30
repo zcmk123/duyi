@@ -1,5 +1,5 @@
 window.onload = function () {
-    $('.loading').animate({opacity: '0' }, 1000, function () {
+    $('.loading').animate({opacity: '0' }, 300, function () {
         $('.loading').css('display', 'none');
     });
     setTimeout(function () {
