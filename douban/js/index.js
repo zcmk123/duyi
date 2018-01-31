@@ -19,11 +19,11 @@
     
     $('#input-text').keyup(deBounce(getDataList, 500));
        
-        // deBounce1(function() {
-        //     console.log(this);
-        // }, 1000)
-    
+    // deBounce1(function() {
+    //     console.log(this);
+    // }, 1000)
 
+    
     function getDataList() {
         $.ajax({
             type: 'GET',

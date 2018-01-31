@@ -17,7 +17,7 @@
             console.log(data);
             var movContent = $(".mov-content"),
             dataRating = data.rating.average == 0 ? '(暂无评分)' : data.rating.average;
-
+            
             $Content = $("<div class='content'></div>");
             $Title = $("<h1>"+ data.title + "    " + "评分:" + dataRating +"</h1>");
             $Summary = $("<p>"+ data.summary +"</p>");

@@ -22,7 +22,7 @@
             total = data.total;
             count = data.count,
             totalPages = Math.ceil(total / count),//总页数
-
+            
             $Ul = $("<ul></ul>");
         dataArr.forEach(function (ele, index) {
             var $Li = $("<li></li>"),

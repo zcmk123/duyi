@@ -18,24 +18,37 @@
         border: 1px solid #fff;
     }
     .box {
+        position: relative;
         width: 200px;
         height: 200px;
-        background: linear-gradient(to top, rgb(18, 96, 148), rgb(25, 77, 248), rgb(172, 66, 243));
         font-size: 30px;
         text-align: center;
         line-height: 200px;
-        /* transform: rotate3d(1,0,0,90deg); */
-        animation: inf-rotate 8s linear infinite;
+        transform: rotate3d(0,1,0,120deg);
+        /* animation: inf-rotate 8s linear infinite; */
     }
     @keyframes inf-rotate{
         0% {transform: rotate3d(0,1,0,0)}
         100% {transform: rotate3d(0,1,0,360deg)}
     }
+    .front, .back {
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+    }
+    .front {
+        background: linear-gradient(to top, rgb(18, 96, 148), rgb(42, 81, 209), rgb(172, 66, 243));
+    }
+    .back {
+        background-color: #fff;
+        transform: rotate3d(1,0,0,180deg) translate3d(0,0,-1px);
+    }
 </style>
 <body>
     <div class="wrapper">
         <div class="box">
-            DoubleBird
+            <div class="front">DoubleBird</div>
+            <div class="back">SharpKnife</div>
         </div>
     </div>
 </body>
