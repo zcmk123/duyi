@@ -7,21 +7,30 @@
     <title>Document</title>
 </head>
 <style>
+    body {
+        background-color: #000;
+    }
     .wrapper {
+        perspective: 350px;
+        margin: 50px auto;
         width: 200px;
         height: 200px;
-        border: 1px solid #000;
+        border: 1px solid #fff;
     }
     .box {
         width: 200px;
         height: 200px;
-        background: linear-gradient(to top, black, grey, whitesmoke);
+        background: linear-gradient(to top, rgb(18, 96, 148), rgb(25, 77, 248), rgb(172, 66, 243));
         font-size: 30px;
         text-align: center;
         line-height: 200px;
-        transform: scaleX(-1);
+        /* transform: rotate3d(1,0,0,90deg); */
+        animation: inf-rotate 8s linear infinite;
     }
-
+    @keyframes inf-rotate{
+        0% {transform: rotate3d(0,1,0,0)}
+        100% {transform: rotate3d(0,1,0,360deg)}
+    }
 </style>
 <body>
     <div class="wrapper">
