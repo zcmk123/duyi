@@ -17,7 +17,7 @@ function ajax(method, url, callback, data, flag) {
     method = method.toUpperCase();
     if(method == 'GET') {
         var date = new Date(),
-            timer = date.getTime();
+        timer = date.getTime();
         xhr.open(method, url + '?' + data + '&timer=' + timer, flag);
         xhr.send();
     }else if(method == 'POST') {
