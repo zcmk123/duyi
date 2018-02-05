@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3dCube</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background: #000;
+    }
+    .wrapper {
+        position: absolute;
+        perspective: 600px;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .box {
+        position: relative;
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+        animation: cube-rotate 8s linear infinite;
+    }
+    .box div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        overflow: hidden;
+        line-height: 200px;
+        font-size: 50px;
+        /* opacity: 0.8; */
+    }
+    .box div img {
+        width: 100%;
+    }
+    .front {
+        background: purple;
+        transform: translate3d(0,0,100px);
+    }
+    .back {
+        background: orange;
+        transform: translate3d(0,0,-100px) rotate3d(0,1,0,-180deg);
+    }
+    .left {
+        background: tomato;
+        transform: rotate3d(0,1,0,-90deg) translate3d(0,0,100px);
+    }
+    .right {
+        background: seagreen;
+        transform: rotate3d(0,1,0,90deg) translate3d(0,0,100px);
+    }
+    .up {
+        background: hotpink;
+        transform: rotate3d(1,0,0,-90deg) translate3d(0,0,100px);
+    }
+    .down {
+        background: cornflowerblue;
+        transform: rotate3d(1,0,0,90deg) translate3d(0,0,100px);
+    }
+    @keyframes cube-rotate{
+        0% {
+            transform:  rotateX(0deg) rotateY(0deg);
+        }
+        33% {
+            transform:  rotateX(120deg) rotateY(240deg);
+        }
+        66% {
+            transform:  rotateX(240deg) rotateY(480deg);
+        }
+        100% {
+            transform:  rotateX(360deg) rotateY(720deg);
+        }
+    }
+</style>
+<body>
+    
+    <div class="wrapper">
+        <div class="box">
+            <div class="front"><img src="./img/dl.png" alt=""></div>
+            <div class="back"><img src="./img/yg.png" alt=""></div>
+            <div class="left"><img src="./img/dl2.jpg" alt=""></div>
+            <div class="right"><img src="./img/yg2.png" alt=""></div>
+            <div class="up"><img src="./img/dl3.jpg" alt=""></div>
+            <div class="down"><img src="./img/yg3.png" alt=""></div>
+        </div>
+    </div>
+
+    <script>
+    
+    </script>
+</body>
+</html>
