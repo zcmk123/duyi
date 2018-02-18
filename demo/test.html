@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="demo"></div>
+    <script src="../jquery-3.2.1.min.js"></script>
     <script>
         // console.log(add(100));
         // function add (a) {
@@ -20,6 +21,15 @@
         //         return 1;
         //     }
         // }
+
+        $.ajax({
+            type : 'GET',
+            url : 'http://localhost/getinfo',
+            dataType : 'jsonp',
+            success : function (data) {
+                console.log(data);
+            }
+        })
     </script>
 </body>
 </html>
