@@ -16,3 +16,4 @@ window.onload = function () {
         $('.slice').removeClass('active');
     })
 }
+
